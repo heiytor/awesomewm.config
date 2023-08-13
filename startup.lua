@@ -1,0 +1,5 @@
+awful.spawn.with_shell("setxkbmap -model abnt2 -layout br")
+awful.spawn.with_shell("feh --bg-scale /home/heitor/Wallpapers/black-water.jpg")
+awful.spawn.with_shell("picom")
+awful.spawn.with_shell("flameshot")
+awful.spawn.with_shell("discord --start-minimized")
