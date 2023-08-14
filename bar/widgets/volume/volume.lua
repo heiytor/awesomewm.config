@@ -7,11 +7,7 @@
 -- @copyright 2020 Pavel Makhov
 -------------------------------------------------
 
-local awful = require("awful")
-local wibox = require("wibox")
 local spawn = require("awful.spawn")
-local gears = require("gears")
-local beautiful = require("beautiful")
 local watch = require("awful.widget.watch")
 local utils = require("bar.widgets.volume.utils")
 

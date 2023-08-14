@@ -1,5 +1,3 @@
-local wibox = require("wibox")
-
 local widget = {}
 
 local ICON_DIR = os.getenv("HOME") .. '/.config/awesome/bar/widgets/volume/icons/'
