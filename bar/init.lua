@@ -9,20 +9,20 @@ local w_lain      = require("bar.widgets.lain_utils")
 
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Each screen has its own tag table.
-    awful.tag(TAGS, s, awful.layout.layouts[1])
+    Awful.tag(TAGS, s, Awful.layout.layouts[1])
 
     s.mylayoutbox = w_layoutbox(s)
     s.mytasklist  = w_tasklist(s)
     s.mytaglist   = w_taglist(s)
 
     -- Create the wibox
-    s.mywibox = awful.wibar {
+    s.mywibox = Awful.wibar {
         position = "bottom",
         screen   = s,
         widget   = {
-            layout = wibox.layout.align.horizontal,
+            layout = Wibox.layout.align.horizontal,
 	        { -- Left widgets
-                layout = wibox.layout.fixed.horizontal,
+                layout = Wibox.layout.fixed.horizontal,
                 s.mylayoutbox,
                 w_utils.separator,
                 s.mytaglist,
@@ -31,7 +31,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
               -- Middle widget
             s.mytasklist,
             { -- Right widgets
-                layout = wibox.layout.fixed.horizontal,
+                layout = Wibox.layout.fixed.horizontal,
                 w_utils.separator,
 
                 w_lain.fs_root.widget,
@@ -46,7 +46,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 w_volume(),
                 w_utils.separator,
 
-                wibox.widget.systray(),
+                Wibox.widget.systray(),
                 w_utils.separator,
                 w_utils.textclock,
             },

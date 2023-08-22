@@ -1,7 +1,7 @@
 local GAP_LENGHT = 4 
 
-beautiful.useless_gap       = GAP_LENGHT
-beautiful.gap_single_client = true
+Beautiful.useless_gap       = GAP_LENGHT
+Beautiful.gap_single_client = true
 
 ---- No borders when rearranging only 1 non-floating or maximized client
 -- screen.connect_signal("arrange", function (s)

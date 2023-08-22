@@ -28,15 +28,15 @@ local widget_types = {
 }
 local volume = {}
 
-local rows  = { layout = wibox.layout.fixed.vertical }
+local rows  = { layout = Wibox.layout.fixed.vertical }
 
-local popup = awful.popup{
-    bg = beautiful.bg_normal,
+local popup = Awful.popup{
+    bg = Beautiful.bg_normal,
     ontop = true,
     visible = false,
-    shape = gears.shape.rounded_rect,
+    shape = Gears.shape.rounded_rect,
     border_width = 1,
-    border_color = beautiful.bg_focus,
+    border_color = Beautiful.bg_focus,
     maximum_width = 400,
     offset = { y = 5 },
     widget = {}
@@ -51,18 +51,18 @@ local function build_main_line(device)
 end
 
 local function build_rows(devices, on_checkbox_click, device_type)
-    local device_rows  = { layout = wibox.layout.fixed.vertical }
+    local device_rows  = { layout = Wibox.layout.fixed.vertical }
     for _, device in pairs(devices) do
 
-        local checkbox = wibox.widget {
+        local checkbox = Wibox.widget {
             checked = device.is_default,
-            color = beautiful.bg_normal,
+            color = Beautiful.bg_normal,
             paddings = 2,
-            shape = gears.shape.circle,
+            shape = Gears.shape.circle,
             forced_width = 20,
             forced_height = 20,
-            check_color = beautiful.fg_urgent,
-            widget = wibox.widget.checkbox
+            check_color = Beautiful.fg_urgent,
+            widget = Wibox.widget.checkbox
         }
 
         checkbox:connect_signal("button::press", function()
@@ -71,35 +71,35 @@ local function build_rows(devices, on_checkbox_click, device_type)
             end)
         end)
 
-        local row = wibox.widget {
+        local row = Wibox.widget {
             {
                 {
                     {
                         checkbox,
                         valign = 'center',
-                        layout = wibox.container.place,
+                        layout = Wibox.container.place,
                     },
                     {
                         {
                             text = build_main_line(device),
                             align = 'left',
-                            widget = wibox.widget.textbox
+                            widget = Wibox.widget.textbox
                         },
                         left = 10,
-                        layout = wibox.container.margin
+                        layout = Wibox.container.margin
                     },
                     spacing = 8,
-                    layout = wibox.layout.align.horizontal
+                    layout = Wibox.layout.align.horizontal
                 },
                 margins = 4,
-                layout = wibox.container.margin
+                layout = Wibox.container.margin
             },
-            bg = beautiful.bg_normal,
-            widget = wibox.container.background
+            bg = Beautiful.bg_normal,
+            widget = Wibox.container.background
         }
 
-        row:connect_signal("mouse::enter", function(c) c:set_bg(beautiful.bg_focus) end)
-        row:connect_signal("mouse::leave", function(c) c:set_bg(beautiful.bg_normal) end)
+        row:connect_signal("mouse::enter", function(c) c:set_bg(Beautiful.bg_focus) end)
+        row:connect_signal("mouse::leave", function(c) c:set_bg(Beautiful.bg_normal) end)
 
         local old_cursor, old_wibox
         row:connect_signal("mouse::enter", function()
@@ -127,14 +127,14 @@ local function build_rows(devices, on_checkbox_click, device_type)
 end
 
 local function build_header_row(text)
-    return wibox.widget{
+    return Wibox.widget{
         {
             markup = "<b>" .. text .. "</b>",
             align = 'center',
-            widget = wibox.widget.textbox
+            widget = Wibox.widget.textbox
         },
-        bg = beautiful.bg_normal,
-        widget = wibox.container.background
+        bg = Beautiful.bg_normal,
+        widget = Wibox.container.background
     }
 end
 
@@ -200,8 +200,8 @@ local function worker(user_args)
     end
 
     volume.widget:buttons(
-            awful.util.table.join(
-                    awful.button({}, 3, function()
+            Awful.util.table.join(
+                    Awful.button({}, 3, function()
                         if popup.visible then
                             popup.visible = not popup.visible
                         else
@@ -209,10 +209,10 @@ local function worker(user_args)
                             popup:move_next_to(mouse.current_widget_geometry)
                         end
                     end),
-                    awful.button({}, 4, function() volume:inc() end),
-                    awful.button({}, 5, function() volume:dec() end),
-                    awful.button({}, 2, function() volume:mixer() end),
-                    awful.button({}, 1, function() volume:toggle() end)
+                    Awful.button({}, 4, function() volume:inc() end),
+                    Awful.button({}, 5, function() volume:dec() end),
+                    Awful.button({}, 2, function() volume:mixer() end),
+                    Awful.button({}, 1, function() volume:toggle() end)
             )
     )
 

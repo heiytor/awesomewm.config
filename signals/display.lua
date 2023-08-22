@@ -1,3 +1,3 @@
-naughty.connect_signal("request::display", function(n)
-    naughty.layout.box { notification = n }
+Naughty.connect_signal("request::display", function(n)
+    Naughty.layout.box { notification = n }
 end)

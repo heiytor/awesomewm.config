@@ -5,25 +5,25 @@ local ICON_DIR = os.getenv("HOME") .. '/.config/awesome/bar/widgets/volume/icons
 function widget.get_widget(widgets_args)
     local args = widgets_args or {}
 
-    local font = args.font or beautiful.font
+    local font = args.font or Beautiful.font
     local icon_dir = args.icon_dir or ICON_DIR
 
-    return wibox.widget {
+    return Wibox.widget {
         {
             {
                 id = "icon",
                 resize = false,
-                widget = wibox.widget.imagebox,
+                widget = Wibox.widget.imagebox,
             },
             valign = 'center',
-            layout = wibox.container.place
+            layout = Wibox.container.place
         },
         {
             id = 'txt',
             font = font,
-            widget = wibox.widget.textbox
+            widget = Wibox.widget.textbox
         },
-        layout = wibox.layout.fixed.horizontal,
+        layout = Wibox.layout.fixed.horizontal,
         set_volume_level = function(self, new_value)
             self:get_children_by_id('txt')[1]:set_text(new_value)
             local volume_icon_name

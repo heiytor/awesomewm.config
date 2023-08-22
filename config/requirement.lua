@@ -1,23 +1,23 @@
 pcall(require, "luaroks.loader")
 
 -- Standard lib
-gears         = require("gears")
-awful         = require("awful")
-hotkeys_popup = require("awful.hotkeys_popup")
+Gears         = require("gears")
+Awful         = require("awful")
+Hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.autofocus")
 
 -- Wibox and layout
-wibox = require("wibox")
+Wibox = require("wibox")
 
 -- Theme
-beautiful = require("beautiful")
+Beautiful = require("beautiful")
 
 -- Notifications
-naughty = require("naughty")
+Naughty = require("naughty")
 
 -- Object management
-menubar = require("menubar")
-ruled   = require("ruled")
+Menubar = require("menubar")
+Ruled   = require("ruled")
 
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
@@ -25,8 +25,8 @@ ruled   = require("ruled")
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 
-naughty.connect_signal("request::display_error", function(message, startup)
-    naughty.notification {
+Naughty.connect_signal("request::display_error", function(message, startup)
+    Naughty.notification {
         urgency = "critical",
         title   = "Oops, an error happened"..(startup and " during startup!" or "!"),
         message = message

@@ -1,15 +1,15 @@
 -- Create a tasklist
 function tasklist(s)
-    return awful.widget.tasklist {
+    return Awful.widget.tasklist {
         screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
+        filter  = Awful.widget.tasklist.filter.currenttags,
         buttons = {
-            awful.button({ }, 1, function (c)
+            Awful.button({ }, 1, function (c)
                 c:activate { context = "tasklist", action = "toggle_minimization" }
             end),
-            awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
-            awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
-            awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
+            Awful.button({ }, 3, function() Awful.menu.client_list { theme = { width = 250 } } end),
+            Awful.button({ }, 4, function() Awful.client.focus.byidx(-1) end),
+            Awful.button({ }, 5, function() Awful.client.focus.byidx( 1) end),
         }
     }
 end

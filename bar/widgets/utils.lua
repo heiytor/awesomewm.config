@@ -1,6 +1,6 @@
-keyboard_layout = awful.widget.keyboardlayout()
-separator       = wibox.widget.textbox("   ")
-textclock       = wibox.widget.textclock()
+keyboard_layout = Awful.widget.keyboardlayout()
+separator       = Wibox.widget.textbox("   ")
+textclock       = Wibox.widget.textclock()
 
 return {
     keyboard_layout = keyboard_layout,

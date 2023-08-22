@@ -5,19 +5,19 @@ local editor = "nvim"
 
 local editor_cmd = terminal .. " -e " .. editor
 
-awful.keyboard.append_global_keybindings({
-    awful.key({ MODKEY,           }, "t", function () awful.spawn(terminal) end,
+Awful.keyboard.append_global_keybindings({
+    Awful.key({ MODKEY,           }, "t", function () Awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ MODKEY,           }, "f", function () awful.spawn(terminal .. " -e ranger") end,
+    Awful.key({ MODKEY,           }, "f", function () Awful.spawn(terminal .. " -e ranger") end,
               {description = "open a file manager", group = "launcher"}),
-    awful.key({ MODKEY,           }, "b", function () awful.spawn(browser) end,
+    Awful.key({ MODKEY,           }, "b", function () Awful.spawn(browser) end,
               {description = "Open a browser", group = "launcher"}),
     -- awful.key({ MODKEY },            "r",     function () awful.screen.focused().mypromptbox:run() end,
     --           {description = "run prompt", group = "launcher"}),
-    awful.key({ MODKEY            }, "p", function() awful.spawn("/home/heitor/.config/scripts/rofi_show_drun") end,
+    Awful.key({ MODKEY            }, "p", function() Awful.spawn("/home/heitor/.config/scripts/rofi_show_drun") end,
               {description = "Show 'run' script", group = "launcher"}),
-    awful.key({ MODKEY            }, "w", function() awful.spawn("/home/heitor/.config/scripts/rofi_show_window") end,
+    Awful.key({ MODKEY            }, "w", function() Awful.spawn("/home/heitor/.config/scripts/rofi_show_window") end,
               {description = "Show 'window' script", group = "launcher"}),
-    awful.key({                   }, "Print", function() awful.spawn("flameshot gui") end,
+    Awful.key({                   }, "Print", function() Awful.spawn("flameshot gui") end,
               { description = "Printscreen", group = "Commands" }),
 })

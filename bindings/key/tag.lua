@@ -1,18 +1,18 @@
-awful.keyboard.append_global_keybindings({
-    awful.key({ MODKEY, "Control" }, "h",   awful.tag.viewprev,
+Awful.keyboard.append_global_keybindings({
+    Awful.key({ MODKEY, "Control" }, "h",   Awful.tag.viewprev,
               {description = "View previous tag", group = "tag"}),
-    awful.key({ MODKEY, "Control" }, "l",  awful.tag.viewnext,
+    Awful.key({ MODKEY, "Control" }, "l",  Awful.tag.viewnext,
               {description = "View next tag", group = "tag"}),
     -- awful.key({ MODKEY,           }, "Escape", awful.tag.history.restore,
     --           {description = "go back", group = "tag"}),
 
-    awful.key {
+    Awful.key {
         modifiers   = { MODKEY },
         keygroup    = "numrow",
         description = "View tag[n]",
         group       = "tag",
         on_press    = function (index)
-            local screen = awful.screen.focused()
+            local screen = Awful.screen.focused()
             local tag = screen.tags[index]
             if tag then
                 tag:view_only()
@@ -20,7 +20,7 @@ awful.keyboard.append_global_keybindings({
         end,
     },
 
-    awful.key {
+    Awful.key {
         modifiers = { MODKEY, "Shift" },
         keygroup    = "numrow",
         description = "Move focused window to tag[n]",

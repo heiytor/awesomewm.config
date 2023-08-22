@@ -1,18 +1,18 @@
-ruled.client.connect_signal("request::rules", function()
+Ruled.client.connect_signal("request::rules", function()
     -- All clients will match this rule.
-    ruled.client.append_rule {
+    Ruled.client.append_rule {
         id         = "global",
         rule       = { },
         properties = {
-            focus     = awful.client.focus.filter,
+            focus     = Awful.client.focus.filter,
             raise     = true,
-            screen    = awful.screen.preferred,
-            placement = awful.placement.no_overlap+awful.placement.no_offscreen
+            screen    = Awful.screen.preferred,
+            placement = Awful.placement.no_overlap+Awful.placement.no_offscreen
         }
     }
 
     -- Floating clients.
-    ruled.client.append_rule {
+    Ruled.client.append_rule {
         id       = "floating",
         rule_any = {
             instance = { "copyq", "pinentry" },
@@ -32,7 +32,7 @@ ruled.client.connect_signal("request::rules", function()
         properties = { floating = true }
     }
 
-    ruled.client.append_rule {
+    Ruled.client.append_rule {
         rule       = { class = "discord"     },
         properties = { screen = 1, tag = "5" }
     }
