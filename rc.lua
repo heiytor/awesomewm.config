@@ -1,8 +1,7 @@
 require("config") -- Configure enviroment
 
-local THEME_DIRECTORY = os.getenv("HOME") .. "/.config/awesome/themes"
-local theme           = THEME_DIRECTORY .. "/dark/theme.lua"
-Beautiful.init(theme)
+local THEME_DIR = os.getenv("HOME") .. "/.config/awesome/themes"
+Beautiful.init(THEME_DIR .. "/dark/theme.lua")
 
 require("signals")
 require("bar")
